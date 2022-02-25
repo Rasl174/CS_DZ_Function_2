@@ -10,44 +10,35 @@ namespace CS_DZ_Function_2
     {
         static void Main(string[] args)
         {
-            int helth = 4;
-            int maxHelth = 10;
+            Console.CursorVisible = false;
 
-            while (true)
-            {
-                HelthDrawBar(helth, maxHelth);
+            int helth = 3, maxHelth = 10;
 
-                Console.SetCursorPosition(0, 3);
-                Console.Write("Введите число для изменения жизней: ");
-                helth += Convert.ToInt32(Console.ReadLine());
+            DrawHelthBar(helth, maxHelth);
 
-                Console.ReadKey();
-                Console.Clear();
-            }
-            
+            Console.ReadKey();
         }
 
-        static void HelthDrawBar(int value, int maxValue)
+        static void DrawHelthBar(int helthValue, int maxHelthValue)
         {
             string bar = "";
 
-            for (int i = 0; i < value; i++)
+            for (int i = 0; i < helthValue; i++)
             {
-                bar += '#';
+                bar += "#";
             }
 
-            Console.SetCursorPosition(5, 1);
+            Console.SetCursorPosition(3, 3);
             Console.Write('[');
             Console.Write(bar);
 
             bar = "";
-
-            for (int i = value; i < maxValue; i++)
+            for (int i = helthValue; i < maxHelthValue; i++)
             {
-                bar += ' ';
+                bar += " ";
             }
 
-            Console.Write(bar + "]");
+            Console.Write(bar + ']');
         }
     }
 }
