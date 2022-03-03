@@ -12,23 +12,21 @@ namespace CS_DZ_Function_2
         {
             Console.CursorVisible = false;
 
-            float health = 90;
-            float maxHealth = 1000;
+            float health = 100;
+            float maxHealth = 200;
             float maxHealthBar = 10;
-            float healthProcent = maxHealthBar / maxHealth;
+            float healthProcent = health / maxHealth;
             
-            health = healthProcent * health;
-
-            DrawHelthBar(health, maxHealthBar);
+            DrawBar(healthProcent * maxHealthBar, maxHealthBar);
 
             Console.ReadKey();
         }
 
-        static void DrawHelthBar(float healthValue, float maxHealthValue)
+        static void DrawBar(float value, float maxValue)
         {
             string bar = "";
 
-            for (int i = 0; i < healthValue; i++)
+            for (int i = 0; i < value; i++)
             {
                 bar += "#";
             }
@@ -38,7 +36,7 @@ namespace CS_DZ_Function_2
             Console.Write(bar);
 
             bar = "";
-            for (double i = healthValue; i < maxHealthValue; i++)
+            for (double i = value; i < maxValue; i++)
             {
                 bar += " ";
             }
